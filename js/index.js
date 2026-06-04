@@ -459,7 +459,7 @@ async function getNextLaunch() {
       launchData?.mission?.description || "Unknown";
     launchElement.img.src = launchData?.image?.image_url;
     launchElement.img.onerror = () => {
-      launchElement.img.src = "../assets/images/default-launch-image.png";
+      launchElement.img.src = "./assets/images/default-launch-image.png";
     };
     launchElement.img.alt = launchData?.slug || "Unknown";
 
