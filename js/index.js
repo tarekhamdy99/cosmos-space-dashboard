@@ -503,7 +503,8 @@ async function getAllUpcomingLaunches() {
         "w-full h-full object-cover group-hover:scale-110 transition-transform duration-500";
       shuttleImage.src = nextLaunches?.image?.image_url;
       shuttleImage.onerror = () => {
-        shuttleImage.src = "../assets/images/default-launch-image.png";
+        shuttleImage.onerror = null;
+        shuttleImage.src = "./assets/images/default-launch-image.png";
       };
       shuttleImage.alt = nextLaunches?.slug;
 
