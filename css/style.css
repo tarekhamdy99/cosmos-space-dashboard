@@ -1,0 +1,44 @@
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #00000080;
+  z-index: 40;
+}
+
+/*? Global Style For Badge */
+.planet-terrestrial,
+.planet-gas-giant,
+.planet-ice-giant,
+.planet-unknown {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/*? Terrestrial Planets */
+.planet-terrestrial {
+  background-color: #8b4f33;
+  color: #de8a3c;
+}
+
+/*? Gas Giants */
+.planet-gas-giant {
+  background-color: #6240a2;
+  color: #c084fc;
+}
+
+/*? Ice Giants */
+.planet-ice-giant {
+  background-color: #2b56a1;
+  color: #6094d7;
+}
+
+/*? Default / Unknown */
+.planet-unknown {
+  background-color: rgba(148, 163, 184, 0.2);
+  color: #cbd5e1;
+}
