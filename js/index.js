@@ -380,7 +380,7 @@ function getPlanetTypeBadge(type) {
 
 //* Get Today Space Date From Server Function
 async function getTodaySpaceData(date = "") {
-  let apiKey = "KVfDpiorlJomJlcRSWcohLKnlZfniAiOJheLVrAK";
+  let apiKey = "CXG5AC3NJuRxM3RqYoff1dzRKFC1FOTFmflrYGlT";
   let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
   if (date) {
     apiUrl += `&date=${date}`;
