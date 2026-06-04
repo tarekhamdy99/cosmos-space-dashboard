@@ -7,7 +7,7 @@
 
 **COSMOS** is an interactive space exploration dashboard built with pure JavaScript, HTML, and CSS. It pulls real‑time data from NASA’s open APIs to deliver stunning astronomy imagery, Mars weather reports, and a searchable catalogue of celestial objects – all wrapped in a modern, responsive interface.
 
-![COSMOS Screenshot](https://raw.githubusercontent.com/tarekhamdy99/COSMOS-Space-Dashboard/main/assets/images/default-launch-image.png)
+![COSMOS Screenshot](https://raw.githubusercontent.com/tarekhamdy99/COSMOS-Space-Dashboard/main/assets/images/Page-Image.png)
 _Add a screenshot of the application here_
 
 ---
@@ -47,6 +47,8 @@ Experience the dashboard live: [COSMOS Demo](https://tarekhamdy99.github.io/COSM
 
 ## 📂 Project Structure
 
+```
+
 COSMOS-Space-Dashboard/
 │
 ├── assets/
@@ -58,6 +60,8 @@ COSMOS-Space-Dashboard/
 │ └── Index.js # Core application logic & event handling & Calling API
 ├── index.html # Main HTML entry point
 └── README.md # READ ME File For Application
+
+```
 
 ---
 
