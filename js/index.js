@@ -4,6 +4,8 @@ const sidebarToggleBtn = document.getElementById("sidebar-toggle");
 const filterSideButtons = document.querySelectorAll(".nav-link");
 const appSections = document.querySelectorAll(".app-section");
 const today = document.querySelectorAll(".today");
+const todayBtn = document.getElementById("today-apod-btn");
+const loadDateBtn = document.getElementById("load-date-btn");
 const dateInput = document.getElementById("apod-date-input");
 const copyRight = document.getElementById("copyright");
 const apodImage = document.getElementById("apod-image");
@@ -398,6 +400,13 @@ async function getTodaySpaceData(date = "") {
   apodExplanation.textContent = "Loading...";
   apodMediaType.textContent = "Loading...";
   today.forEach((date) => (date.textContent = "Loading..."));
+  loadDateBtn.classList.add("bg-blue-500");
+  loadDateBtn.classList.remove("bg-slate-800");
+  if (!date) {
+    todayBtn.classList.add("bg-blue-500");
+    todayBtn.classList.remove("bg-slate-800");
+  }
+
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
@@ -417,6 +426,11 @@ async function getTodaySpaceData(date = "") {
     apodTitle.textContent = data.title;
     apodExplanation.textContent = data.explanation;
     apodMediaType.textContent = data.media_type;
+
+    //? Change Buttons Styles
+    loadDateBtn.classList.remove("bg-blue-500");
+    loadDateBtn.classList.add("bg-slate-800");
+
     //? Update Content Based On Value Of Date Input
     updateDatesFromAPI(data.date);
     return data;
@@ -750,10 +764,27 @@ document.addEventListener("click", (e) => {
   }
 });
 
-//*
+//* Calling Api Today Sapce when change Date Input Value Based On Date Input's Value
 dateInput.addEventListener("change", (event) => {
   const selectedDate = event.target.value;
+  //? If Date Input Value Equal To Current date
+  const todayDateString = new Date().toISOString().split("T")[0];
+  if (selectedDate === todayDateString) {
+    todayBtn.classList.add("bg-blue-500");
+    todayBtn.classList.remove("bg-slate-800");
+  } else {
+    todayBtn.classList.remove("bg-blue-500");
+    todayBtn.classList.add("bg-slate-800");
+  }
+
   getTodaySpaceData(selectedDate);
+});
+
+//* Calling Api Today Sapce when Click On Today Button Based On Current Today
+todayBtn.addEventListener("click", () => {
+  todayBtn.classList.add("bg-blue-500");
+  todayBtn.classList.remove("bg-slate-800");
+  getTodaySpaceData();
 });
 
 //& End Add Event Listener Logic
